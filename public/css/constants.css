@@ -1,0 +1,28 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-image: url("/../img/Wallpaper.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: rgb(69, 182, 218);
+}
+
+.hidden {
+	visibility: hidden;
+	opacity: 0;
+	position: absolute; /* Asegura que no ocupa espacio en el layout */
+	z-index: -1; /* Coloca el contenedor detrás de otros elementos */
+	transition: opacity 0.5s ease-out, visibility 5s 0.5s;
+}
+
+.visible {
+	visibility: visible;
+	opacity: 1;
+	position: relative; /* Vuelve a colocar en el flujo normal del documento */
+	z-index: 1; /* Asegura que el contenedor esté por encima de otros elementos */
+	transition: opacity 0.5s ease-in-out, visibility 5s 0.5s;
+}

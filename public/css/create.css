@@ -1,0 +1,91 @@
+#create-container {
+	background-color: #FCBE3C;
+	border-radius: 40px 40px 40px 40px;
+	display: flex;
+	padding: 2.2vh;
+}
+
+.input-group {
+	display: flex;
+	flex-direction: column;
+}
+
+.input-group input, textarea {
+	background-color: #FEF2DA;
+	border: none;
+	box-shadow: 0px 10px 10px -6px rgba(0,0,0,0.25);
+	color: #000;
+	font-family: 'Segoe UI';
+	font-size: 2em;
+	margin: 2px;
+	outline: none;
+	padding: 10px;
+	padding-left: 30px;
+}
+
+#author-input {
+	border-radius: 40px 0px 0px 0px;
+	height: 5vh;
+	text-align: center;
+}
+
+#comment-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#comment-input {
+	border-radius: 0px 0px 0px 40px;
+	font-size: 1.8em;
+	height: 8vh;
+	overflow: auto;
+	padding: 30px 10px 0px 30px;
+	resize: none;
+}
+
+#color-picker {
+	border: none;
+	box-shadow: none;
+    height: 35px;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    width: 35px;
+}
+
+#submit-button {
+	background-color: #FEF2DA;
+	border: none;
+	border-radius: 0px 25px 25px 0px;
+	box-shadow: 0px 10px 10px -6px rgba(0,0,0,0.25);
+	cursor: pointer;
+	font-size: 1.3em;
+	margin: 2px;
+	margin-left: 9px;
+	width: 80px;
+}
+
+#back-container {
+	width: 2.2vw;
+	display: flex;
+	flex-direction: column;
+    justify-content: flex-start;
+}
+
+#back-button {
+	background-image: url("/../img/arrow.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: transparent;
+	border: none;
+	height: 35px;
+	width: 45px;
+	cursor: pointer;
+	padding: 10px;
+}
+
+#form{
+	display: inherit;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mᴜʀᴏ ᴅᴇ Mᴇɴsᴀᴊᴇs</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/create.css">
+    <link rel="stylesheet" href="/css/constants.css">
+    <link rel="stylesheet" href="/css/media-query.css">
+    <link rel="icon" href="img/Icon.webp" type="image/webp">>
+    <script src="/js/animation.js"></script>
+    <script src="/js/createButton.js"></script>
+    <script src="/js/viewButton.js"></script>
+    <script src="https://kit.fontawesome.com/19136e66a0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="main-container">
+        <div id="button-container" class="visible">
+            <div id="create-button" class="button">¡Crear!</div>
+            <div id="view-button" class="button">¡Mostrar!</div>
+        </div>
+        <div id="create-container" class="hidden">
+            <form id="form">
+                <div class="input-group">
+                    <input name="author" id="author-input" type="text" placeholder="Tu nombre va aquí..."></input>
+                    <div id="comment-container">
+                        <textarea name="comment" id="comment-input" type="text" placeholder="🌴✨🚀"></textarea>
+                        <input type="color" id="color-picker" class="color-picker">
+                    </div>
+                </div>
+                <button type="submit" id="submit-button">
+                    <i class="fa-solid fa-paper-plane fa-lg" id="icon-submit"></i>
+                </button>
+            </form>
+        </div>
+        <div id="back-container">
+            <button id="back-button" class="hidden"></button>
+        </div>
+    </div>
+</body>
+</html>

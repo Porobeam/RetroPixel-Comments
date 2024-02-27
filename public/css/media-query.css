@@ -1,0 +1,45 @@
+@media screen and (max-width: 860px) {
+	.button {
+		font-size: 3.5vh;
+		padding: 5vh 8vw;
+		margin: 0px 0.7vw;
+	}
+	#button-container {
+		flex-direction: column;
+	}
+}
+
+@media (max-width: 560px) {
+	#create-container{
+		width: 80%;
+	}
+
+	.input-group input, textarea {
+		font-size: 1.3em;
+		padding-left: 20px;
+		width: calc(100% + 8px);
+	}
+
+	#comment-input, #author-input {
+		font-size: 1.5em;
+		padding: 0.85em; 
+	}
+
+	#submit-button {
+		margin-left: 55px;
+		padding: 0.5em;
+		font-size: 1.5em;
+	}
+
+	#color-picker {
+		right: 0px;
+		left: calc(100% + 0.5em);
+	}
+}
+
+@media (max-width: 390px) {
+	#author-input {
+		width: calc(100% + 16px);
+		font-size: 1.2em;
+	}
+}
