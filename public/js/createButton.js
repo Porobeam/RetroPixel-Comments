@@ -14,8 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	};
 	
 	createButton.addEventListener('click', async () => {
+		// avoids back-container to take space
 		backContainer.style.marginTop = '0px'; 
 		createContainer.style.marginBottom = '0px';
+
 		toggleVisibility(buttonContainer, false);
 		toggleVisibility(createContainer, true);
 		toggleVisibility(backButton, true);
@@ -24,18 +26,21 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 	
 	backButton.addEventListener('click', async () => {
+		// avoids back-container to collapse
 		backContainer.style.marginTop = `${(createContainer.offsetHeight)}px`;
 		createContainer.style.marginBottom = `${(backContainer.offsetHeight)}px`;
+
 		toggleVisibility(createContainer, false);
 		toggleVisibility(backContainer, false);
 		toggleVisibility(buttonContainer, true);
 		await wait(50);
 	});
 
-
+	// makes back-container looking fit with the create container
 	const adjustWidth = () => {
 		backContainer.style.width = `${createContainer.offsetWidth}px`;
 	};
+	
 	window.addEventListener('resize', adjustWidth);
 	adjustWidth();
 

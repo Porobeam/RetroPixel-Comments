@@ -21,12 +21,12 @@
             <div id="view-button" class="button">¡Mostrar!</div>
         </div>
         <div id="create-container" class="hidden">
-            <form id="form">
+            <form id="form" action="/comments" method="post">
                 <div class="input-group">
                     <input name="author" id="author-input" type="text" placeholder="Tu nombre va aquí..."></input>
                     <div id="comment-container">
                         <textarea name="comment" id="comment-input" type="text" placeholder="🌴✨🚀"></textarea>
-                        <input type="color" id="color-picker" class="color-picker">
+                        <input name="color" type="color" id="color-picker" class="color-picker">
                     </div>
                 </div>
                 <button type="submit" id="submit-button">

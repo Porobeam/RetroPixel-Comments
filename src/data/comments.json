@@ -1,0 +1,18 @@
+{
+  "comments": [
+    {
+      "id": 1,
+      "author": "Porobeam",
+      "comment": "hello, world!",
+      "color": "#F3F6D8",
+      "date": "2024-02-27T21:53:414Z"
+    },
+    {
+      "id": 2,
+      "author": "Juanito",
+      "comment": "Soy genial",
+      "color": "#c43131",
+      "date": "2024-02-27T22:35:06.607Z"
+    }
+  ]
+}

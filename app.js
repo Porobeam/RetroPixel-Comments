@@ -18,6 +18,7 @@ hbsutils.registerPartials(__dirname + '/views/partials');
 hbsutils.registerWatchedPartials(__dirname + '/views/partials');
 
 // middlewares
+app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(morgan('dev', {
     skip: function (req, res) {
