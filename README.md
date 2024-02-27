@@ -1,10 +1,12 @@
 # Pixel Art Comment Wall 🎨
 
-Welcome to my pixel art-styled comment wall! This is a cool project where users can leave their comments in a fun and original way.
+# Welcome to my pixel art-styled comment wall! This is a cool project where users can leave their comments in a fun and original way. <br>🌴✨🚀
 
-![Comment wall demonstration](public/img/Demo.gif)
+<div align="center">
+  <img src="https://i.imgur.com/ywXCfiw.gif"/>
+</div>
 
-## Features
+### Features
 
 - Unique and attractive pixel art style.
 - Intuitive and easy-to-use user interface.
@@ -13,23 +15,23 @@ Welcome to my pixel art-styled comment wall! This is a cool project where users 
 - Integration with social media for sharing comments. (soon!)
 - And much more to discover! 
 
-## Technologies Used
+### Technologies Used
 
 - HTML5 and CSS3 for the website's structure and design.
 - JavaScript for the interactive functionality of the comment wall.
 - Express & NodeJS for managing comments on the server.
 - JSON for storing and retrieving user comments.
 
-## Installation and Usage
+### Installation and Usage
 
 1. Clone this repository to your local machine.
 2. Install the necessary dependencies by running `npm install`.
 3. Start the local server with `npm start`.
 4. Open your browser and go to `http://localhost:3000` to see the comment wall in action.
 
-## Contribution
+### Contribution
 
-We greatly appreciate any contribution you'd like to make to improve this project! If you wish to contribute, follow these steps:
+I appreciate any contribution you'd like to make to improve this project! If you wish to contribute, follow these steps:
 
 1. Fork this repository.
 2. Create a new branch (`git checkout -b feature/awesome-feature`).
@@ -39,7 +41,7 @@ We greatly appreciate any contribution you'd like to make to improve this projec
 
 ## Author
 
-@Porobeam(https://github.com/Porobeam)
+@Porobeam
 
 ## License
 
