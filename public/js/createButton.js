@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	};
 	
 	createButton.addEventListener('click', async () => {
-		// avoids back-container to take space
+		// Avoids back-container to take space
 		backContainer.style.marginTop = '0px'; 
 		createContainer.style.marginBottom = '0px';
 
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 	
 	backButton.addEventListener('click', async () => {
-		// avoids back-container to collapse
+		// Avoids back-container to collapse
 		backContainer.style.marginTop = `${(createContainer.offsetHeight)}px`;
 		createContainer.style.marginBottom = `${(backContainer.offsetHeight)}px`;
 
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		await wait(50);
 	});
 
-	// makes back-container looking fit with the create container
+	// Makes back-container looking fit with the create container
 	const adjustWidth = () => {
 		backContainer.style.width = `${createContainer.offsetWidth}px`;
 	};
