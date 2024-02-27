@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () =>
 	const targetPosition = (windowHeight - containerHeight) / 2;
 	
 	// This is a very cool recursive function. Is actually what makes it smoothy!
-
 	const animateToPosition = (currentPosition) => {
 		window.scrollTo(0, 0);
 		if (currentPosition > targetPosition){
