@@ -1,0 +1,26 @@
+/* comments.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.comment {
+    background-color: #f4f4f4;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.comment h2 {
+    margin: 0 0 5px 0;
+}
+
+.comment p {
+    margin: 0;
+}
+
+.comment span {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.8em;
+    color: #666;
+}

@@ -10,7 +10,8 @@ controller.read = (req, res) => {
         if (err) {
             return res.status(500).send('Error reading comments file');
         }
-        res.json(JSON.parse(data));
+        const comments = JSON.parse(data).comments;
+        res.render('comments', { comments });
     });
 };
 
