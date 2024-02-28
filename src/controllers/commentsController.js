@@ -19,8 +19,7 @@ function hexToRgb(hex) {
 controller.read = (req, res) => {
     fs.readFile(filePath, 'utf8', (err, data) => {
         if (err) {
-            console.log(err);
-            return res.status(500).send('Error reading comments file');
+            res.render(console.log(err));
         }
         let comments = JSON.parse(data).comments;
         
