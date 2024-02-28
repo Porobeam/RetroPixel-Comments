@@ -49,8 +49,6 @@ controller.create = (req, res) => {
     
     fs.readFile(filePath, (err, data) => {
         if (err) {
-            res.render(console.log(err));
-            console.log(err);
             res.status(500).send('Error reading comments file');
             return;
         }
