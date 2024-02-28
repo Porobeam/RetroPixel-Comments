@@ -1,26 +1,45 @@
-/* comments.css */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 125px;
+    width: 60vw;
+    margin-top: 20px;
+    margin-left: 20vw;
+    border-radius: 200px;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: #ffffff; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    border-bottom: 3px solid rgba(255, 255, 255, 0.2); 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px; 
 }
 
 .comment {
-    background-color: #f4f4f4;
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 5px;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.75); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    color: #000;
 }
 
 .comment h2 {
-    margin: 0 0 5px 0;
+    margin: 0 0 10px 0;
 }
 
 .comment p {
-    margin: 0;
+    margin: 0 0 10px 0;
 }
 
 .comment span {
     display: block;
-    margin-top: 10px;
     font-size: 0.8em;
     color: #666;
+    margin-top: 10px;
 }

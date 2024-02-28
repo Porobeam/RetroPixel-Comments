@@ -5,12 +5,14 @@
     <link rel="stylesheet" href="/css/comments.css"> <!-- Asume que este es el path a tu CSS -->
 </head>
 <body>
-    <h1>Comentarios</h1>
+    <header>
+        <h1>Comentarios</h1>
+    </header>
     {{#each comments}}
-    <div class="comment">
-        <h2>{{this.author}}</h2>
-        <p>{{this.comment}}</p>
-        <span>{{this.date}}</span>
+    <div class="comment" style="background-color: {{this.colorRGB}};">
+        <h2> {{this.author}} </h2>
+        <p> {{this.comment}} </p>
+        <span> {{this.date}} </span>
     </div>
     {{/each}}
 </body>

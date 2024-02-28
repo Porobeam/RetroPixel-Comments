@@ -4,13 +4,34 @@ const fs = require('fs');
 const path = require('path');
 const jsonDirectory = path.join(__dirname, '..', 'data', 'comments.json');
 
+function hexToRgb(hex, brightnessFactor = 1) { 
+    hex = hex.replace(/^#/, '');
+    let r = parseInt(hex.substring(0, 2), 16);
+    let g = parseInt(hex.substring(2, 4), 16);
+    let b = parseInt(hex.substring(4, 6), 16);
+
+    r = Math.floor(r * brightnessFactor);
+    g = Math.floor(g * brightnessFactor);
+    b = Math.floor(b * brightnessFactor);
+
+    return { r, g, b };
+}
+
 // Read comments from the JSON file and send them as a response.
 controller.read = (req, res) => {
     fs.readFile(jsonDirectory, 'utf8', (err, data) => {
         if (err) {
             return res.status(500).send('Error reading comments file');
         }
-        const comments = JSON.parse(data).comments;
+        let comments = JSON.parse(data).comments;
+
+        comments = comments.map(comment => {
+
+            const rgb = hexToRgb(comment.color);
+            comment.colorRGB = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.75)`; // Añade la opacidad de 0.75
+            return comment;
+        });
+
         res.render('comments', { comments });
     });
 };
