@@ -2,29 +2,29 @@ const controller = {};
 
 const fs = require('fs');
 const path = require('path');
-const jsonDirectory = path.join(__dirname, '..', 'data', 'comments.json');
 
-function hexToRgb(hex, brightnessFactor = 1) { 
+const jsonDirectory = path.join(__dirname, '..', '..', 'tmp');
+const filePath = path.join(jsonDirectory, 'comments.json');
+
+
+function hexToRgb(hex) { 
     hex = hex.replace(/^#/, '');
     let r = parseInt(hex.substring(0, 2), 16);
     let g = parseInt(hex.substring(2, 4), 16);
     let b = parseInt(hex.substring(4, 6), 16);
-
-    r = Math.floor(r * brightnessFactor);
-    g = Math.floor(g * brightnessFactor);
-    b = Math.floor(b * brightnessFactor);
 
     return { r, g, b };
 }
 
 // Read comments from the JSON file and send them as a response.
 controller.read = (req, res) => {
-    fs.readFile(jsonDirectory, 'utf8', (err, data) => {
+    fs.readFile(filePath, 'utf8', (err, data) => {
         if (err) {
+            console.log(err);
             return res.status(500).send('Error reading comments file');
         }
         let comments = JSON.parse(data).comments;
-
+        
         comments = comments.map(comment => {
 
             const rgb = hexToRgb(comment.color);
@@ -48,8 +48,10 @@ controller.create = (req, res) => {
         date: new Date().toISOString(), 
     };
     
-    fs.readFile(jsonDirectory, (err, data) => {
+    
+    fs.readFile(filePath, (err, data) => {
         if (err) {
+            console.log(err);
             res.status(500).send('Error reading comments file');
             return;
         }
@@ -61,7 +63,7 @@ controller.create = (req, res) => {
 
         comments.push(newComment);
     
-        fs.writeFile(jsonDirectory, JSON.stringify({ comments }, null, 2), (err) => {
+        fs.writeFile(filePath, JSON.stringify({ comments }, null, 2), (err) => {
             if (err) {
                 res.status(500).send('Error writing comments file');
                 return;
