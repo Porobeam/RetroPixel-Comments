@@ -1,0 +1,19 @@
+#icons-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    border: 1px solid blue;
+}
+
+.navicon {
+    margin: 10px;
+    font-size: 3em;
+    opacity: 0;
+	transition: opacity 3s ease-in-out;
+}

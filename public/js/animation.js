@@ -24,10 +24,15 @@ document.addEventListener('DOMContentLoaded', () =>
 	animateToPosition(3000);
 	
 	const buttons = document.querySelectorAll('.button');
+	const navicon = document.querySelectorAll('.navicon');
 	
 	// This makes every button getting visible smoothly
 	buttons.forEach(button => {
 		button.style.opacity = 1;
+	});
+	
+	navicon.forEach(navicon => {
+		navicon.style.opacity = .75;
 	});
 
 	// Just a couple debug stuff, prob will delete at some point
