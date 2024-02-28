@@ -9,7 +9,7 @@ const path = require('path');
 const jsonDirectory = path.join(__dirname, '..', 'data', 'comments.json');
 
 // Método para leer comentarios desde el archivo JSON.
-controller.readComments = (req, res) => {
+controller.read = (req, res) => {
     // Leer el contenido del archivo JSON de comentarios.
     fs.readFile(jsonDirectory, (err, data) => {
         // Verificar si hay error al leer el archivo y responder con error 500 si es así.
@@ -23,7 +23,7 @@ controller.readComments = (req, res) => {
 };
 
 // Método para agregar un nuevo comentario al archivo JSON.
-controller.addComment = (req, res) => {
+controller.create = (req, res) => {
     // Obtener el nuevo comentario del cuerpo de la petición.
     const requestBody = req.body; // La información del comentario recibida.
     
@@ -65,7 +65,7 @@ controller.addComment = (req, res) => {
             }
             
             // Enviar respuesta indicando que el comentario fue añadido exitosamente.
-            res.send('Comment added successfully');
+            res.redirect('/read');
         });
     });
 };

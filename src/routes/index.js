@@ -7,9 +7,9 @@ router.get('/', (req, res) => {
 });
 
 // Agregar un nuevo comentario
-router.post('/comments', commentsController.addComment);
+router.post('/create', commentsController.create);
 
 // Obtener todos los comentarios
-router.get('/comments', commentsController.readComments);
+router.get('/read', commentsController.read);
 
 module.exports = router;

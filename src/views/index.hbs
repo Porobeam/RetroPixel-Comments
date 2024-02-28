@@ -18,10 +18,10 @@
     <div id="main-container">
         <div id="button-container" class="visible">
             <div id="create-button" class="button">¡Crear!</div>
-            <div id="view-button" class="button">¡Mostrar!</div>
+            <a href="/read"><div id="view-button" class="button">¡Mostrar!</div></a>
         </div>
         <div id="create-container" class="hidden">
-            <form id="form" action="/comments" method="post">
+            <form id="form" action="/create" method="post">
                 <div class="input-group">
                     <input name="author" id="author-input" type="text" placeholder="Tu nombre va aquí..."></input>
                     <div id="comment-container">
