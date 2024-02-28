@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const jsonDirectory = path.join(__dirname, '..', '..', 'tmp');
-const filePath = path.join(jsonDirectory, 'comments.json');
+const filePath = path.join(jsonDirectory);
 
 function hexToRgb(hex) { 
     hex = hex.replace(/^#/, '');
