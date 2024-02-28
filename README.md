@@ -2,7 +2,7 @@
 
 # Welcome to my pixel art-styled comment wall! This is a cool project where users can leave their comments in a fun and original way. <br>🌴✨🚀
 
-<a href="https://porobeam.vercel.app/"><h2>You can see it right here!</h2></a>
+<a href="https://porobeam.vercel.app/">You can see it right here!</a>
 
 <div align="center">
   <img src="https://i.imgur.com/ywXCfiw.gif"/>
