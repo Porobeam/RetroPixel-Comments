@@ -6,7 +6,6 @@ const path = require('path');
 const jsonDirectory = path.join(__dirname, '..', '..', 'tmp');
 const filePath = path.join(jsonDirectory, 'comments.json');
 
-
 function hexToRgb(hex) { 
     hex = hex.replace(/^#/, '');
     let r = parseInt(hex.substring(0, 2), 16);
