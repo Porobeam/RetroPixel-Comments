@@ -62,7 +62,8 @@ controller.create = (req, res) => {
     
         fs.writeFile(filePath, JSON.stringify({ comments }, null, 2), (err) => {
             if (err) {
-                res.status(500).send('Error writing comments file');
+                console.log(err); // Sigue siendo útil mantener el registro del error en la consola.
+                res.status(500).send(`Error reading comments file: ${err.message}`);
                 return;
             }
             
