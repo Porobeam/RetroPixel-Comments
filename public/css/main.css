@@ -4,6 +4,14 @@
 	box-sizing: content-box;
 }
 
+body {
+	background-image: url("/../img/Wallpaper.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: rgb(69, 182, 218);
+}
+
 #main-container {
 	height: 100vh;
 	width: 100vw;

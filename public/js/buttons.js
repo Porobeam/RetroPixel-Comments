@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	let createContainer = document.getElementById('create-container');
 	let backButton = document.getElementById('back-button');
 	let backContainer = document.getElementById('back-container');
+	let submitButton = document.getElementById('submit-button');
 	
 	let wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -34,6 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		toggleVisibility(backContainer, false);
 		toggleVisibility(buttonContainer, true);
 		await wait(50);
+	});
+
+	submitButton.addEventListener('click', () => {
+		const audio = new Audio('/audio/click.wav');
+
+		audio.play();
 	});
 
 	// Makes back-container looking fit with the create container

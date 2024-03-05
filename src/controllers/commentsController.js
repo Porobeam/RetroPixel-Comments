@@ -1,77 +1,63 @@
 const controller = {};
+const Comment = require('../models/schema');
 
-const fs = require('fs');
-const path = require('path');
-
-const jsonDirectory = path.join(__dirname, '..', '..', 'tmp');
-const filePath = path.join(jsonDirectory, 'comments.json');
-
-function hexToRgb(hex) { 
-    hex = hex.replace(/^#/, '');
-    let r = parseInt(hex.substring(0, 2), 16);
-    let g = parseInt(hex.substring(2, 4), 16);
-    let b = parseInt(hex.substring(4, 6), 16);
-
-    return { r, g, b };
+async function getLastCommentId()
+{
+    try
+    {
+        const lastComment = await Comment.findOne().sort({ id: -1 });
+        if (lastComment)
+        {
+            return lastComment.id;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+    catch (error)
+    {
+        console.error('ERROR OBTAINING LAST ID, INFORM DEV', error);
+        throw error;
+    }
 }
 
-// Read comments from the JSON file and send them as a response.
-controller.read = (req, res) => {
-    fs.readFile(filePath, 'utf8', (err, data) => {
-        if (err) {
-            return res.status(500).send('Error reading comments file');
-        }
-        let comments = JSON.parse(data).comments;
-        
-        comments = comments.map(comment => {
-
-            const rgb = hexToRgb(comment.color);
-            comment.colorRGB = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.75)`; // Añade la opacidad de 0.75
-            return comment;
-        });
-
-        res.render('comments', { comments });
-    });
+controller.read = async (req, res) => {
+    try
+    {
+        const comments = await Comment.find();
+        res.render('read', { comments }); 
+    }
+    catch (error)
+    {
+        console.error('ERROR READING COMMENTS: ', error);
+        res.status(500).send('ERROR READING COMMENTS');
+    }
 };
 
-// Add a new comment to the JSON file and redirect to /read.
-controller.create = (req, res) => {
-    const requestBody = req.body; 
-    
-    const newComment = {
-        id: null, 
-        author: requestBody.author, 
-        comment: requestBody.comment,
-        color: requestBody.color,
-        date: new Date().toISOString(), 
-    };
-    
-    
-    fs.readFile(filePath, (err, data) => {
-        if (err) {
-            res.status(500).send('Error reading comments file');
-            return;
-        }
-        
-        const comments = JSON.parse(data).comments;
-        
-        newComment.id = comments.length > 0 ? comments[comments.length - 1].id + 1 : 1;    
-        newComment.date = new Date().toISOString();
+controller.create = async (req, res) =>
+{
+    try
+    {
+        const lastCommentId = await getLastCommentId();
 
-        comments.push(newComment);
-    
-        fs.writeFile(filePath, JSON.stringify({ comments }, null, 2), (err) => {
-            if (err) {
-                console.log(err); // Sigue siendo útil mantener el registro del error en la consola.
-                res.status(500).send(`Error reading comments file: ${err.message}`);
-                return;
-            }
-            
-            res.redirect('/read');
+        const newComment = new Comment({
+            id: lastCommentId + 1,
+            author: req.body.author,
+            comment: req.body.comment,
+            color: req.body.color,
+            date: new Date().toISOString()
         });
-    });
+
+        await newComment.save();
+
+        res.redirect('/read');
+    } 
+    catch (error)
+    {
+        console.error('ERROR CREATING NEW COMMENT, CONTACT DEV: ', error);
+        res.status(500).send('ERROR CREATING NEW COMMENT');
+    }
 };
-
-
 
 module.exports = controller;

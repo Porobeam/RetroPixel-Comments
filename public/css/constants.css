@@ -1,16 +1,3 @@
-* {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	background-image: url("/../img/Wallpaper.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-color: rgb(69, 182, 218);
-}
-
 .hidden {
 	visibility: hidden;
 	opacity: 0;

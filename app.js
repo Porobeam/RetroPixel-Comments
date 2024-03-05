@@ -1,23 +1,33 @@
-const fs = require('fs');
 const hbs = require('hbs');
 const hbsutils = require('hbs-utils')(hbs);
 const morgan = require('morgan');
 const express = require('express');
 const path = require('path');
+const mongoose = require('mongoose');
+require('dotenv').config();
 
 const app = express();
 
-// settings
+// Settings
 app.set('port', process.env.PORT || 3000);
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'src', 'views'));
 
-// hbs settings
+// Mongo Connection
+const uri = process.env.MONGODB_CONNECT_URI;
+mongoose.connect(uri)
+.then(() => {
+    console.log('Connected to database');
+})
+.catch(err => {
+    console.error('ERROR CONNECTING TO DATABASE: ', err);
+});
+
+// Handlebars settings
 hbs.registerPartials(__dirname + '/src/views/partials', function (err) {});
 hbsutils.registerPartials(__dirname + '/views/partials');
-hbsutils.registerWatchedPartials(__dirname + '/views/partials');
 
-// middlewares
+// Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(morgan('dev', {
@@ -28,13 +38,13 @@ app.use(morgan('dev', {
     }
 }));
 
-// routes
+// Routes
 app.use('/', require('./src/routes/index'));
 
-// static files
+// Static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-// starting the server
+// Server listener
 app.listen(app.get('port'), () => {
     console.log(`Server on port ${app.get('port')}`);
 });

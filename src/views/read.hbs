@@ -2,14 +2,15 @@
 <html>
 <head>
     <title>Comentarios</title>
-    <link rel="stylesheet" href="/css/comments.css"> <!-- Asume que este es el path a tu CSS -->
+    <link rel="stylesheet" href="/css/comments.css">
+    <script src="/js/comments.js"></script>
 </head>
 <body>
     <header>
         <h1>Comentarios</h1>
     </header>
     {{#each comments}}
-    <div class="comment" style="background-color: {{this.colorRGB}};">
+    <div class="comment" style="background-color: {{this.color}}">
         <h2> {{this.author}} </h2>
         <p> {{this.comment}} </p>
         <span> {{this.date}} </span>

@@ -22,7 +22,7 @@
 - HTML5 and CSS3 for the website's structure and design.
 - JavaScript for the interactive functionality of the comment wall.
 - Express & NodeJS for managing comments on the server.
-- JSON for storing and retrieving user comments.
+- MongoDB Atlas for storing and retrieving user comments.
 
 ### Installation and Usage
 

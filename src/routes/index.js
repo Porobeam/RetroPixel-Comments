@@ -6,10 +6,10 @@ router.get('/', (req, res) => {
     res.render("index");
 });
 
-// Agregar un nuevo comentario
+// Add new comment
 router.post('/create', commentsController.create);
 
-// Obtener todos los comentarios
+// Read all comments
 router.get('/read', commentsController.read);
 
 module.exports = router;
