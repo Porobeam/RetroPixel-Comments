@@ -20,8 +20,8 @@ async function getLastCommentId() {
 // Controller to read comments
 controller.read = async (req, res) => {
     try {
-        // Get all comments and sort by ID in ascending order
-        const comments = await Comment.find().sort({ id: 1 });
+        // Get all comments and sort by ID in descending order
+        const comments = await Comment.find().sort({ id: -1 });
         res.render('read', { comments }); 
     } catch (error) {
         console.error('ERROR READING COMMENTS: ', error);
