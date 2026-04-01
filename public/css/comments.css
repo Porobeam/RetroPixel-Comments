@@ -1,45 +1,174 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #d79adf;
+    }
+
+    header, .comment {
+        position: relative;
+        overflow: hidden;
+    }
+
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 125px;
+        width: 60vw;
+        margin: 20px auto 0 auto; 
+        border-radius: 200px;
+        background: linear-gradient(135deg, #6e8efb, #a777e3);
+        color: #ffffff; 
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+        border-bottom: 3px solid rgba(255, 255, 255, 0.2); 
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 24px;
+    }
+
+    header::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -150%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(
+            to right, 
+            transparent, 
+            rgba(255, 255, 255, 0.4), 
+            transparent
+        );
+        transform: skewX(-25deg);
+        animation: shine 3s infinite;
+    }
+
+    @keyframes shine {
+        0% { left: -150%; }
+        100% { left: 150%; }
+    }
+
+    .comment {
+        width: 70vw;
+        margin: 40px auto;
+        padding: 35px;
+        background-color: rgba(0, 0, 0, 0.75);
+        color: #fff; 
+        border-radius: 0;
+        border: 0.01cm solid #000;
+        box-shadow: 4px 0 0 0 #000, -4px 0 0 0 #000, 0 4px 0 0 #000, 0 -4px 0 0 #000, 0 8px 15px rgba(0, 0, 0, 0.3);
+        background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        background-size: 4px 4px;
+        
+        /* EFECTO FOCAL INICIAL */
+        opacity: 0.3;
+        filter: blur(8px);
+        transform: scale(0.9);
+        transition: all 0.4s ease;
+        
+        /* ANIMACIÓN DE SCROLL */
+        view-timeline-name: --focal;
+        view-timeline-axis: block;
+        animation: focalEffect linear both;
+        animation-timeline: --focal;
+        animation-range: entry 15% cover 50%;
+    }
+
+    @keyframes focalEffect {
+        0% {
+            opacity: 0.3;
+            filter: blur(8px);
+            transform: scale(0.9);
+        }
+        100% {
+            opacity: 1;
+            filter: blur(0px);
+            transform: scale(1);
+        }
+    }
+
+    header::before, .comment::before {
+        content: "";
+        position: absolute;
+        top: 0; 
+        left: 0; 
+        width: 100%; 
+        height: 100%;
+        background: linear-gradient(
+            rgba(18, 16, 16, 0) 11%, 
+            rgba(0, 0, 0, 0.1) 11%
+        ), linear-gradient(
+            90deg, 
+            rgba(255, 0, 0, 0.03), 
+            rgba(0, 255, 0, 0.01), 
+            rgba(0, 0, 255, 0.03)
+        );
+        background-size: 100% 3px, 3px 100%;
+        pointer-events: none;
+        z-index: 2;
+    }
+
+    .comment h2, .comment p {
+        color: #fff; /* Cambiado a blanco para legibilidad */
+        margin: 0 0 10px 0;
+    }
+
+    .comment span {
+        display: block;
+        font-size: 0.8em;
+        color: #bbb; /* Un poco más claro para que resalte en el fondo negro */
+        margin-top: 10px;
+    }
+
+    @media screen and (max-width: 860px) {
+    header {
+        width: 90vw;
+        height: 140px;
+        font-size: 32px;
+        margin: 40px auto;
+    }
+
+    .comment {
+        width: 88vw;
+        margin: 300px auto; /* Espacio gigante para forzar el scroll entre uno y otro */
+        padding: 60px 30px;
+        min-height: 65vh;   /* Ocupa el 65% de la altura de la pantalla */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+    .comment h2 {
+        font-size: 3.5rem; /* Título gigante */
+        margin-bottom: 20px;
+    }
+
+    .comment p {
+        font-size: 2rem;   /* Texto de lectura muy grande */
+        line-height: 1.4;
+    }
+
+    .comment span {
+        font-size: 1.2rem;
+        margin-top: 30px;
+    }
 }
 
-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 125px;
-    width: 60vw;
-    margin-top: 20px;
-    margin-left: 20vw;
-    border-radius: 200px;
-    background: linear-gradient(135deg, #6e8efb, #a777e3);
-    color: #ffffff; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    border-bottom: 3px solid rgba(255, 255, 255, 0.2); 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 24px; 
-}
+@media screen and (max-width: 480px) {
+    header {
+        font-size: 26px;
+        height: 110px;
+    }
 
-.comment {
-    margin: 20px 0;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: rgba(0, 0, 0, 0.75); 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    color: #000;
-}
+    .comment {
+        margin: 350px 50px; /* Aún más espacio en teléfonos pequeños */
+        min-height: 75vh;   /* Casi toda la pantalla para un solo comentario */
+    }
 
-.comment h2 {
-    margin: 0 0 10px 0;
-}
+    .comment h2 {
+        font-size: 2.8rem;
+    }
 
-.comment p {
-    margin: 0 0 10px 0;
-}
-
-.comment span {
-    display: block;
-    font-size: 0.8em;
-    color: #666;
-    margin-top: 10px;
+    .comment p {
+        font-size: 1.6rem;
+    }
 }
