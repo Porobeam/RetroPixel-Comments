@@ -1,54 +1,49 @@
-# Pixel Art Comment Wall 🎨
+# RetroPixel Comments 🎨
 
-# Welcome to my pixel art-styled comment wall! This is a cool project where users can leave their comments in a fun and original way. <br>🌴✨🚀
+Muro de comentarios con estilo pixel art donde los usuarios pueden escribir mensajes que quedan grabados en el tiempo.
 
-<a href="https://porobeam.vercel.app/">You can see it right here!</a>
+<a href="https://porobeam.vercel.app/">Click me</a>
 
 <div align="center">
   <img src="https://i.imgur.com/ywXCfiw.gif"/>
 </div>
 
-### Features
+### Funciones
 
-- Unique and attractive pixel art style.
-- Intuitive and easy-to-use user interface.
-- Customization of comments with pixelated UI.
-- Comment sorting and filtering functionality. (soon!)
-- Integration with social media for sharing comments. (soon!)
-- And much more to discover! 
+* Interfaz con estilo pixel art
+* Entrada y visualización de comentarios
+* Diseño simple y fácil de usar
+* Orden y filtrado de comentarios (!)
+* Integración con redes sociales (!)
 
-### Technologies Used
+### Tecnologías
 
-- HTML5 and CSS3 for the website's structure and design.
-- JavaScript for the interactive functionality of the comment wall.
-- Express & NodeJS for managing comments on the server.
-- MongoDB Atlas for storing and retrieving user comments.
+* HTML5 y CSS3 para la estructura y diseño
+* JavaScript para la interacción
+* Node.js y Express para el servidor
+* MongoDB Atlas para la base de datos
 
-### Installation and Usage
+### Instalación
 
-1. Clone this repository to your local machine.
-2. Install the necessary dependencies by running `npm install`.
-3. Start the local server with `npm start`.
-4. Open your browser and go to `http://localhost:3000` to see the comment wall in action.
+1. Clonar el repositorio.
+2. Ejecutar `npm install`.
+3. Ejecutar `npm run dev`.
+4. Abrir `http://localhost:4000`.
 
-### Contribution
+### Contribución
 
-I appreciate any contribution you'd like to make to improve this project! If you wish to contribute, follow these steps:
+1. Hacer fork del repositorio.
+2. Crear una rama (`git checkout -b feature/nueva-funcion`).
+3. Hacer commit (`git commit -am 'Nueva función'`).
+4. Subir cambios (`git push origin feature/nueva-funcion`).
+5. Abrir un Pull Request.
 
-1. Fork this repository.
-2. Create a new branch (`git checkout -b feature/awesome-feature`).
-3. Make your changes and commit them (`git commit -am 'Add some feature'`).
-4. Push the branch (`git push origin feature/awesome-feature`).
-5. Open a Pull Request and describe your changes in detail.
-
-## Author
+## Autor
 
 @Porobeam
 
-## License
+## Licencia
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+MIT
 
----
-
-Thank you for visiting my pixel art comment wall! We hope you enjoy it and have fun leaving your comments. Feel free to contact us if you have any questions or suggestions!
+Copyright © 2024 Porobeam
