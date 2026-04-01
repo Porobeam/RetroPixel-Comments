@@ -46,4 +46,5 @@ Muro de comentarios con estilo pixel art donde los usuarios pueden escribir mens
 
 MIT
 
-Copyright © 2024 Porobeam
+Copyright © 2026 Porobeam
+Since 2024
