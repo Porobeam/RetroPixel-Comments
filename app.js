@@ -9,7 +9,7 @@ require('dotenv').config();
 const app = express();
 
 // Settings
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 4000);
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'src', 'views'));
 
@@ -44,7 +44,10 @@ app.use('/', require('./src/routes/index'));
 // Static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Server listener
-app.listen(app.get('port'), () => {
-    console.log(`Server on port ${app.get('port')}`);
-});
+module.exports = app;
+
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(app.get('port'), () => {
+        console.log(`Server on port ${app.get('port')}`);
+    });
+}
