@@ -36,7 +36,7 @@ header {
     box-shadow: 4px 0 0 0 #000, -4px 0 0 0 #000, 0 4px 0 0 #000, 0 -4px 0 0 #000, 0 8px 15px rgba(0, 0, 0, 0.3);
     background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
     background-size: 4px 4px;
-    opacity: 93%;
+    opacity: 99%;
 }
 
 header::before, .comment::before {
